@@ -31,3 +31,30 @@ document.body.addEventListener("click", function (event) {
         jobDescription: card.querySelector(".job-description").innerText,
         status: ""
     };
+
+    if (event.target.classList.contains("interview-btn")) {
+        jobData.status = "Interview";
+
+        rejectedList = rejectedList.filter(j => j.companyName !== jobData.companyName);
+
+        if (!interviewList.find(j => j.companyName === jobData.companyName)) {
+            interviewList.push(jobData);
+        }
+
+        card.querySelector(".status-text")?.remove();
+        const status = document.createElement("p");
+        status.className = "status-text text-green-600 font-semibold";
+        status.innerText = "Status: Interview";
+        card.querySelector(".space-y-2").appendChild(status);
+    }
+
+    if (event.target.classList.contains("rejected-btn")) {
+        jobData.status = "Rejected";
+
+
+        interviewList = interviewList.filter(j => j.companyName !== jobData.companyName);
+
+        if (!rejectedList.find(j => j.companyName === jobData.companyName)) {
+            rejectedList.push(jobData);
+        }
+
