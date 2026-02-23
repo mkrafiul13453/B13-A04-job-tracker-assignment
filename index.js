@@ -11,7 +11,7 @@ const rejectedButton = document.getElementById("rejected-button");
 
 const allCards = document.getElementById("all-cards");
 const filteredSection = document.getElementById("filtered-section");
-
+// The functional section is start here //
 function updateDashboard() {
     totalJob.innerText = document.querySelectorAll(".job-card").length;
     totalInterview.innerText = interviewList.length;
