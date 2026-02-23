@@ -74,5 +74,19 @@ document.body.addEventListener("click", function (event) {
     updateDashboard();
 });
 
+function renderFiltered(list) {
+    filteredSection.innerHTML = "";
+
+    if (list.length === 0) {
+        filteredSection.innerHTML = `
+      <div class="text-center mt-10">
+        <i class="fa-regular fa-folder-open text-5xl"></i>
+        <p class="text-xl font-semibold">No jobs Available</p>
+        <p class="text-gray-500">You haven’t marked any jobs yet</p>
+      </div>
+    `;
+        return;
+    }
+
 
 
