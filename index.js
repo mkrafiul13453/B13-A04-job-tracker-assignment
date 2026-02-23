@@ -112,5 +112,22 @@ function renderFiltered(list) {
     });
 }
 
+allButton.addEventListener("click", () => {
+    filteredSection.classList.add("hidden");
+    allCards.classList.remove("hidden");
+});
+
+interviewButton.addEventListener("click", () => {
+    allCards.classList.add("hidden");
+    filteredSection.classList.remove("hidden");
+    renderFiltered(interviewList);
+});
+
+rejectedButton.addEventListener("click", () => {
+    allCards.classList.add("hidden");
+    filteredSection.classList.remove("hidden");
+    renderFiltered(rejectedList);
+});
+
 
 
