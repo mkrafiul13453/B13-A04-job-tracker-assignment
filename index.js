@@ -58,3 +58,21 @@ document.body.addEventListener("click", function (event) {
             rejectedList.push(jobData);
         }
 
+        card.querySelector(".status-text")?.remove();
+        const status = document.createElement("p");
+        status.className = "status-text text-red-600 font-semibold";
+        status.innerText = "Status: Rejected";
+        card.querySelector(".space-y-2").appendChild(status);
+    }
+
+    if (event.target.classList.contains("fa-trash-can")) {
+        card.remove();
+        interviewList = interviewList.filter(j => j.companyName !== jobData.companyName);
+        rejectedList = rejectedList.filter(j => j.companyName !== jobData.companyName);
+    }
+
+    updateDashboard();
+});
+
+
+
