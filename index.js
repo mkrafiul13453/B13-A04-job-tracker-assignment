@@ -17,3 +17,17 @@ function updateDashboard() {
     totalInterview.innerText = interviewList.length;
     totalRejected.innerText = rejectedList.length;
 }
+
+updateDashboard();
+
+document.body.addEventListener("click", function (event) {
+    const card = event.target.closest(".job-card");
+    if (!card) return;
+
+    const jobData = {
+        companyName: card.querySelector(".company-name").innerText,
+        companyPosition: card.querySelector(".company-position").innerText,
+        workType: card.querySelector(".work-type").innerText,
+        jobDescription: card.querySelector(".job-description").innerText,
+        status: ""
+    };
