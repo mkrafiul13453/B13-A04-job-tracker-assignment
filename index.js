@@ -88,5 +88,29 @@ function renderFiltered(list) {
         return;
     }
 
+    list.forEach(job => {
+        const div = document.createElement("div");
+        div.className = "job-card grid grid-cols-2 shadow p-5 rounded mb-4";
+        div.innerHTML = `
+      <div class="space-y-2">
+        <p class="company-name font-bold">${job.companyName}</p>
+        <p class="company-position">${job.companyPosition}</p>
+        <p class="work-type">${job.workType}</p>
+        <p class="job-description">${job.jobDescription}</p>
+        <p class="font-semibold ${job.status === "Interview" ? "text-green-600" : "text-red-600"
+            }">Status: ${job.status}</p>
+        <div class="flex gap-3">
+          <button class="btn btn-outline btn-success interview-btn">INTERVIEW</button>
+          <button class="btn btn-outline btn-error rejected-btn">REJECTED</button>
+        </div>
+      </div>
+      <div class="flex justify-end">
+        <i class="fa-regular fa-trash-can cursor-pointer"></i>
+      </div>
+    `;
+        filteredSection.appendChild(div);
+    });
+}
+
 
 
