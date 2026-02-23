@@ -16,10 +16,30 @@
 </head>
 
 <body class="p-6">
-
-
-
-
+    <header class="max-w-5xl mx-auto">
+        <h1 class="text-3xl font-bold mb-4">Job Application Tracker</h1>
+    
+        <div class="grid grid-cols-3 gap-6 mb-6">
+            <div class="p-4 shadow rounded">
+                <p>Total</p>
+                <span id="totalJob">0</span>
+            </div>
+            <div class="p-4 shadow rounded">
+                <p>Interview</p>
+                <span id="totalInterview">0</span>
+            </div>
+            <div class="p-4 shadow rounded">
+                <p>Rejected</p>
+                <span id="totalRejected">0</span>
+            </div>
+        </div>
+    
+        <div class="mb-4">
+            <button id="all-button" class="btn btn-primary btn-soft">All</button>
+            <button id="interview-button" class="btn btn-primary btn-soft">Interview</button>
+            <button id="rejected-button" class="btn btn-primary btn-soft">Rejected</button>
+        </div>
+    </header>
     <script src="./index.js"></script>
 </body>
 
